@@ -26,8 +26,12 @@
         <Button x:Name="btnWin" Content="Win" HorizontalAlignment="Left" Margin="670,323,0,0" VerticalAlignment="Top" Width="88" Height="21" Click="btnWin_Click"/>
         <Button x:Name="btnDraw" Content="Draw" HorizontalAlignment="Left" Margin="670,362,0,0" VerticalAlignment="Top" Height="21" Width="88" Click="btnDraw_Click"/>
         <Button x:Name="btnLoss1" Content="Loss" HorizontalAlignment="Left" Margin="670,396,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.13,0.184" Height="21" Width="88" Click="btnLoss1_Click"/>
-        <Image x:Name="imgStar1" Height="40" Width="50"/>
-        <Image x:Name="imgStar2" Height="40" Width="50"/>
-        <Image x:Name="imgStar3" Height="40" Margin="652,197,50,197"/>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
+            <Image x:Name="imgStar1" Height="40" Width="50"/>
+            <Image x:Name="imgStar2" Height="40" Width="50"/>
+            <Image x:Name="imgStar3" Height="40" Width="50"/>
+        </StackPanel>
     </Grid>
+
+    
 </Window>

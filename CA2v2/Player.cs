@@ -42,8 +42,8 @@ namespace CA2v2
 
         public override string ToString()
         {
-            int Calculation = Calculate();
-            return $"{Name} - {ResultRecord} - {Calculation}";
+            
+            return $"{Name} - {ResultRecord} - {Calculate()}";
         }
     }
 }

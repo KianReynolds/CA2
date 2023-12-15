@@ -25,6 +25,15 @@ namespace CA2v2
             InitializeComponent();
 
             SortTeamsANdDisplay();
+
+            Player player = new Player();
+
+            player.ResultRecord = "WWDDL";
+            int ratings = player.Calculate();
+
+            
+            Stars(ratings);
+
         }
 
         private void SortTeamsANdDisplay()
@@ -72,6 +81,7 @@ namespace CA2v2
             t3.Players.Add(p9);
 
             return teams;
+            
         }
 
         private void lbxTeams_SelectionChanged(object sender, SelectionChangedEventArgs e)
