@@ -95,7 +95,7 @@ namespace CA2v2
 
         private void btnWin_Click(object sender, RoutedEventArgs e)
         {
-            UpdateWin();
+            UpdateWin('W');
         }
 
         private void UpdateWin(char newLetter)
@@ -114,6 +114,99 @@ namespace CA2v2
                     lbxPlayers.SelectedItem = playerChosen;
 
                     List<Team> teams = lbxTeams.ItemsSource as List<Team>;
+                    teams.Sort();
+                    teams.Reverse();
+                    lbxTeams.ItemsSource = null;
+                    lbxTeams.ItemsSource = teams;
+                    lbxTeams.SelectedItem = teamChosen;
+
+
+                }
+            }
+        }
+
+
+
+        private void Stars(int rating)
+        {
+            imgStar1.Source = new BitmapImage(new Uri("/Images/staroutline.png", UriKind.Relative));
+            imgStar2.Source = new BitmapImage(new Uri("/Images/staroutline.png", UriKind.Relative));
+            imgStar3.Source = new BitmapImage(new Uri("/Images/staroutline.png", UriKind.Relative));
+
+            if(rating >  0)
+            {
+                imgStar1.Source = new BitmapImage(new Uri("/Images/starsolid.png", UriKind.Relative));
+            }
+            if (rating > 5)
+            {
+                imgStar2.Source = new BitmapImage(new Uri("/Images/starsolid.png", UriKind.Relative));
+            }
+            if (rating > 10)
+            {
+                imgStar3.Source = new BitmapImage(new Uri("/Images/starsolid.png", UriKind.Relative));
+            }
+
+        }
+
+        private void btnDraw_Click(object sender, RoutedEventArgs e)
+        {
+            UpdateDraw('D');
+        }
+
+        private void UpdateDraw(char newLetter)
+        {
+            Player playerChosen = lbxPlayers.SelectedItem as Player;
+            if (playerChosen != null)
+            {
+                string newCount = playerChosen.ResultRecord.Substring(1) + newLetter;
+                playerChosen.ResultRecord = newCount;
+
+                Team teamChosen = lbxTeams.SelectedItem as Team;
+                if (teamChosen != null)
+                {
+                    lbxPlayers.ItemsSource = null;
+                    lbxPlayers.ItemsSource = teamChosen.Players;
+                    lbxPlayers.SelectedItem = playerChosen;
+
+                    List<Team> teams = lbxTeams.ItemsSource as List<Team>;
+                    teams.Sort();
+                    teams.Reverse();
+                    lbxTeams.ItemsSource = null;
+                    lbxTeams.ItemsSource = teams;
+                    lbxTeams.SelectedItem = teamChosen;
+
+
+                }
+            }
+        }
+
+        private void btnLoss1_Click(object sender, RoutedEventArgs e)
+        {
+            UpdateLoss('L');
+        }
+
+        private void UpdateLoss(char newLetter)
+        {
+            Player playerChosen = lbxPlayers.SelectedItem as Player;
+            if (playerChosen != null)
+            {
+                string newCount = playerChosen.ResultRecord.Substring(1) + newLetter;
+                playerChosen.ResultRecord = newCount;
+
+                Team teamChosen = lbxTeams.SelectedItem as Team;
+                if (teamChosen != null)
+                {
+                    lbxPlayers.ItemsSource = null;
+                    lbxPlayers.ItemsSource = teamChosen.Players;
+                    lbxPlayers.SelectedItem = playerChosen;
+
+                    List<Team> teams = lbxTeams.ItemsSource as List<Team>;
+                    teams.Sort();
+                    teams.Reverse();
+                    lbxTeams.ItemsSource = null;
+                    lbxTeams.ItemsSource = teams;
+                    lbxTeams.SelectedItem = teamChosen;
+
 
                 }
             }
